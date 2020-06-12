@@ -143,11 +143,14 @@
       if (linePre > -1) {
         linePre++;
       }
+      if (linePost == editor.lastLine()) {
+        linePost--;
+      }
       let code = editor.getRange({
         line: linePre,
         ch: 0
       }, {
-        line: linePost,
+        line: linePost + 1,
         ch: 0
       });
 
