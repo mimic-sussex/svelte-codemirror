@@ -122,7 +122,7 @@
       let line = cursorInfo.line;
       let linePost = editor.lastLine();
 
-      while (line < linePost) {
+      while (line < linePost) { // Get last line before divider
         if (/___+/.test(editor.getLine(line))) {  // Test RegEx at least 3 underscores
           linePost = line - 1;
           break;
@@ -132,8 +132,8 @@
 
       line = cursorInfo.line;
       let linePre = -1;
-      while (line >= 0) {
-        // console.log(editor2.getLine(line));
+      while (line >= 0) { // Get first line after divider
+        // console.log('codemirror:getblock:', editor2.getLine(line));
         if (/___+/.test(editor.getLine(line))) {
           linePre = line;
           break;
@@ -147,7 +147,7 @@
         line: linePre,
         ch: 0
       }, {
-        line: linePost + 1,
+        line: linePost,
         ch: 0
       });
 
