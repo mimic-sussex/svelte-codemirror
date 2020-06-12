@@ -128,10 +128,11 @@
         // console.log('codemirror:getblock:', editor.getLine(line));
         if (/___+/.test(editor.getLine(line))) {  // Test RegEx at least 3 underscores
           linePost = line - 1;
+          console.log(`linePost ${linePost}`);
           break;
         }
         line++;
-        console.log(`line ${line} linePost ${linePost}`);
+        console.log(`line ${line}`);
       }
 
       line = cursorInfo.line;
@@ -141,10 +142,11 @@
         // console.log('codemirror:getblock:', editor.getLine(line));
         if (/___+/.test(editor.getLine(line))) {
           linePre = line;
+          console.log(`linePre ${linePre}`);
           break;
         }
         line--;
-        console.log(`line ${line} linePost ${linePre}`);
+        console.log(`line ${line}`);
       }
       if (linePre > -1) {
         linePre++;
