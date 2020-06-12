@@ -123,22 +123,25 @@
       let linePost = editor.lastLine();
 
       while (line < linePost) { // Get last line before divider
+        console.log('codemirror:getblock:', editor2.getLine(line));
         if (/___+/.test(editor.getLine(line))) {  // Test RegEx at least 3 underscores
           linePost = line - 1;
           break;
         }
         line++;
+        console.log('codemirror:getblock:linePost:', linePost);
       }
 
       line = cursorInfo.line;
       let linePre = -1;
       while (line >= 0) { // Get first line after divider
-        // console.log('codemirror:getblock:', editor2.getLine(line));
+        console.log('codemirror:getblock:', editor2.getLine(line));
         if (/___+/.test(editor.getLine(line))) {
           linePre = line;
           break;
         }
         line--;
+        console.log('codemirror:getblock:line:', editor2.getLine(line));
       }
       if (linePre > -1) {
         linePre++;
