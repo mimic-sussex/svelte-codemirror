@@ -123,7 +123,7 @@
       let linePost = editor.lastLine();
 
       while (line < linePost) {
-        if (/___+/.test(editor.getLine(line))) {  // Test RegEx at least 3 underscores
+        if (/___+\n/.test(editor.getLine(line))) {  // Test RegEx at least 3 underscores
           linePost = line - 1;
           break;
         }
@@ -134,7 +134,7 @@
       let linePre = -1;
       while (line >= 0) {
         // console.log(editor2.getLine(line));
-        if (/___+/.test(editor.getLine(line))) {
+        if (/___+\n/.test(editor.getLine(line))) {
           linePre = line;
           break;
         }
