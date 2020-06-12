@@ -148,7 +148,7 @@
         line--;
         console.log(`line ${line}`);
       }
-      if (linePre > -1) {
+      if (linePre == -1) {
         linePre++;
       }
 
