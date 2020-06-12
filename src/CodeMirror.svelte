@@ -120,7 +120,9 @@
       let cursorInfo = editor.getCursor();
       //find post divider
       let line = cursorInfo.line;
+      console.log('line', line);
       let linePost = editor.lastLine();
+      console.log('linePost', linePost);
 
       while (line < linePost) { // Get last line before divider
         // console.log('codemirror:getblock:', editor.getLine(line));
@@ -129,7 +131,7 @@
           break;
         }
         line++;
-        console.log('codemirror:getblock:linePost:', linePost);
+        console.log(`line ${line} linePost ${linePost}`);
       }
 
       line = cursorInfo.line;
@@ -142,11 +144,13 @@
           break;
         }
         line--;
-        console.log('codemirror:getblock:linePre:', linePre);
+        console.log(`line ${line} linePost ${linePre}`);
       }
       if (linePre > -1) {
         linePre++;
       }
+
+      console.log(`Range: linePre ${linePre} linePost ${linePost}`);
       let code = editor.getRange({
         line: linePre,
         ch: 0
