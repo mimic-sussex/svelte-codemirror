@@ -120,21 +120,22 @@
       let cursorInfo = editor.getCursor();
       //find post divider
       let line = cursorInfo.line;
-      console.log('line', line);
+      // console.log('line', line);
       let linePost = editor.lastLine();
-      console.log('linePost', linePost);
+      // console.log('linePost', linePost);
 
       while (line < linePost) { // Get last line before divider
         if (/^___+[/\r\n|\r|\n/]?$/gm.test(editor.getLine(line))){ // BUG: Regex doesn't match wih end of line
           linePost = line;
+          (linePost == editor.lastLine())? linePost++ : undefined;
           break;
         }
         line++;
       }
-      if(linePost == editor.lastLine() ) {  // Test RegEx at least 3 underscores
-        console.log('linePost -last line', editor.getLine(linePost))
-        console.log('match:', /^___+[/\r\n|\r|\n/]?$/gm.test(editor.getLine(linePost)))
-        linePost++;
+      if( ) {  // Test RegEx at least 3 underscores
+        // console.log('linePost -last line', editor.getLine(linePost))
+        // console.log('match:', /^___+[/\r\n|\r|\n/]?$/gm.test(editor.getLine(linePost)))
+        
       }
 
 
