@@ -128,18 +128,22 @@
         let gline = editor.getLine(line);
         // console.log(gline);
         if (/___+$/gm.test(gline)){
-          if(line == editor.lastLine() ) {  // Test RegEx at least 3 underscores
+          // if(line == editor.lastLine() ) {  // Test RegEx at least 3 underscores
+          //   linePost = line;
+          // }
+          // else{
             linePost = line;
-          }
-          else{
-            linePost = line - 1;
-          }
+          // }
           console.log(`linePost ${linePost}`);
           break;
         }
         line++;
         console.log(`${line} ${gline}`);
       }
+      if(linePost == editor.lastLine() ) {  // Test RegEx at least 3 underscores
+        linePost--;
+      }
+
 
       line = cursorInfo.line;
 
@@ -164,7 +168,7 @@
         line: linePre,
         ch: 0
       }, {
-        line: linePost + 1,
+        line: linePost,
         ch: 0
       });
 
