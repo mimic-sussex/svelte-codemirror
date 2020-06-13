@@ -127,7 +127,7 @@
       while (line < linePost) { // Get last line before divider
         // console.log('codemirror:getblock:', editor.getLine(line));
         if (/___+$/.test(editor.getLine(line))){
-          if(linePost == editor.lastLine() ) {  // Test RegEx at least 3 underscores
+          if(line == editor.lastLine() ) {  // Test RegEx at least 3 underscores
             linePost = line;
           }
           else{
@@ -153,7 +153,7 @@
         line--;
         console.log(`line ${line}`);
       }
-      if (linePre == -1) {
+      if (linePre > -1) {
         linePre++;
       }
 
