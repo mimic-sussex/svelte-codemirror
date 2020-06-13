@@ -125,8 +125,9 @@
       console.log('linePost', linePost);
 
       while (line < linePost) { // Get last line before divider
-        // console.log('codemirror:getblock:', editor.getLine(line));
-        if (/___+$/.test(editor.getLine(line))){
+        let gline = editor.getLine(line);
+        console.log('codemirror:getblock:', );
+        if (/___+$/.test(gline)){
           if(line == editor.lastLine() ) {  // Test RegEx at least 3 underscores
             linePost = line;
           }
