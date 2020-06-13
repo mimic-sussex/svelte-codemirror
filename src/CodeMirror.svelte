@@ -124,7 +124,7 @@
       let linePost = editor.lastLine();
       // console.log('linePost', linePost);
 
-      while (line < linePost) { // Get last line before divider
+      while (line <= linePost) { // Get last line before divider
         if (/^___+[/\r\n|\r|\n/]?$/gm.test(editor.getLine(line))){ // BUG: Regex doesn't match wih end of line
           linePost = line;
           // (linePost == editor.lastLine())? linePost++ : undefined;
