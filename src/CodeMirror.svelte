@@ -168,6 +168,8 @@
         ch: 0
       });
 
+      console.log("code: ", code);
+
       return code;
     }
   }
