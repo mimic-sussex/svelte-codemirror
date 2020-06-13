@@ -127,17 +127,11 @@
       while (line < linePost) { // Get last line before divider
         if (/^___+[/\r\n|\r|\n/]?$/gm.test(editor.getLine(line))){ // BUG: Regex doesn't match wih end of line
           linePost = line;
-          (linePost == editor.lastLine())? linePost++ : undefined;
+          // (linePost == editor.lastLine())? linePost++ : undefined;
           break;
         }
         line++;
       }
-      if( ) {  // Test RegEx at least 3 underscores
-        // console.log('linePost -last line', editor.getLine(linePost))
-        // console.log('match:', /^___+[/\r\n|\r|\n/]?$/gm.test(editor.getLine(linePost)))
-        
-      }
-
 
       line = cursorInfo.line;
 
