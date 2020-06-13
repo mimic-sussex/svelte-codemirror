@@ -148,8 +148,11 @@
         line--;
         console.log(`line ${line}`);
       }
-      if (linePre > -1) {
+      if (linePre == -1) {
         linePre++;
+      }
+      if (linePost == editor.lastLine()) {
+        linePost--;
       }
 
       console.log(`Range: linePre ${linePre} linePost ${linePost}`);
