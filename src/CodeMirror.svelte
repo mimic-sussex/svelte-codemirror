@@ -138,7 +138,7 @@
           break;
         }
         line++;
-        console.log(`line ${line} ${gline}`);
+        console.log(`${line} ${gline}`);
       }
 
       line = cursorInfo.line;
