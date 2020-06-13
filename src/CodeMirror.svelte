@@ -133,6 +133,7 @@
       }
       if(linePost == editor.lastLine() ) {  // Test RegEx at least 3 underscores
         console.log('linePost -last line', editor.getLine(linePost))
+        console.log('match:', /^___+[/\r\n|\r|\n/]?$/gm.test(editor.getLine(line)))
         linePost++;
       }
 
