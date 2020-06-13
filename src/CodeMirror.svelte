@@ -132,8 +132,8 @@
         line++;
       }
       if(linePost == editor.lastLine() ) {  // Test RegEx at least 3 underscores
-        console.log(editor.getLine(line))
-        linePost;
+        console.log('linePost -last line', editor.getLine(linePost))
+        linePost++;
       }
 
 
