@@ -127,7 +127,7 @@
       while (line < linePost) { // Get last line before divider
         let gline = editor.getLine(line);
         // console.log(gline);
-        if (/___+$/.test(gline)){
+        if (/___+$/gm.test(gline)){
           if(line == editor.lastLine() ) {  // Test RegEx at least 3 underscores
             linePost = line;
           }
