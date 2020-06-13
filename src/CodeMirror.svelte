@@ -132,7 +132,7 @@
         line++;
       }
       if(linePost == editor.lastLine() ) {  // Test RegEx at least 3 underscores
-        editor.getLine(editor.getLine(line))
+        console.log(editor.getLine(line))
         linePost;
       }
 
