@@ -126,8 +126,13 @@
 
       while (line < linePost) { // Get last line before divider
         // console.log('codemirror:getblock:', editor.getLine(line));
-        if (/___+$/.test(editor.getLine(line))) {  // Test RegEx at least 3 underscores
-          linePost = line - 1;
+        if (/___+$/.test(editor.getLine(line))){
+          if(linePost == editor.lastLine() ) {  // Test RegEx at least 3 underscores
+            linePost = line;
+          }
+          else{
+            linePost = line - 1;
+          }
           console.log(`linePost ${linePost}`);
           break;
         }
@@ -148,12 +153,10 @@
         line--;
         console.log(`line ${line}`);
       }
-      // if (linePre == -1) {
-      //   linePre++;
-      // }
-      if (linePost == editor.lastLine()) {
-        linePost--;
+      if (linePre == -1) {
+        linePre++;
       }
+
 
       console.log(`Range: linePre ${linePre} linePost ${linePost}`);
       let code = editor.getRange({
