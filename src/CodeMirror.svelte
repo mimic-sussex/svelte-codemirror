@@ -141,7 +141,7 @@
         console.log(`${line} ${gline}`);
       }
       if(linePost == editor.lastLine() ) {  // Test RegEx at least 3 underscores
-        linePost--;
+        linePost;
       }
 
 
