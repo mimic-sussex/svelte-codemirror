@@ -141,16 +141,16 @@
       while (line >= 0) { // Get first line after divider
         // console.log('codemirror:getblock:', editor.getLine(line));
         if (/___+/.test(editor.getLine(line))) {
-          linePre = line;
+          linePre = line + 1;
           console.log(`linePre ${linePre}`);
           break;
         }
         line--;
         console.log(`line ${line}`);
       }
-      if (linePre == -1) {
-        linePre++;
-      }
+      // if (linePre == -1) {
+      //   linePre++;
+      // }
       if (linePost == editor.lastLine()) {
         linePost--;
       }
