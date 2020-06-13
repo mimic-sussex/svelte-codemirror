@@ -125,17 +125,14 @@
       console.log('linePost', linePost);
 
       while (line < linePost) { // Get last line before divider
-        let gline = editor.getLine(line);
-        // console.log(gline);
-        if (/^___+[/\r\n|\r|\n/]?$/gm.test(gline)){ // BUG: Regex doesn't match wih end of line
+        if (/^___+[/\r\n|\r|\n/]?$/gm.test(editor.getLine(line))){ // BUG: Regex doesn't match wih end of line
           linePost = line;
-          // console.log(`linePost ${linePost}`);
           break;
         }
         line++;
-        // console.log(`${line} ${gline}`);
       }
       if(linePost == editor.lastLine() ) {  // Test RegEx at least 3 underscores
+        editor.getLine(editor.getLine(line))
         linePost;
       }
 
