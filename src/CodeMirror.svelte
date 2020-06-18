@@ -140,11 +140,11 @@
         // console.log('codemirror:getblock:', editor.getLine(line));
         if (/^___+/.test(editor.getLine(line))) {
           linePre = line;
-          console.log(`linePre ${linePre}`);
+//          console.log(`linePre ${linePre}`);
           break;
         }
         line--;
-        console.log(`line ${line}`);
+//        console.log(`line ${line}`);
       }
       if (linePre > -1) {
         linePre++;
