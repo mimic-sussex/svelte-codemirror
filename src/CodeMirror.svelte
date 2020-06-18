@@ -151,7 +151,7 @@
       }
 
 
-      console.log(`Range: linePre ${linePre} linePost ${linePost}`);
+      //console.log(`Range: linePre ${linePre} linePost ${linePost}`);
       let code = editor.getRange({
         line: linePre,
         ch: 0
